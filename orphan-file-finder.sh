@@ -13,29 +13,29 @@ else
     exit 2
 fi
 
-# Input directory path to store unique files.
-read -e -p "Where would you like the unique files to be stored? Please input the path: " UNIQUEDIR
-eval UNIQUEDIR=$UNIQUEDIR
+# Input directory path to store orphan files.
+read -e -p "Where would you like the orphan files to be stored? Please input the path: " ORPHANDIR
+eval ORPHANDIR=$ORPHANDIR
 
-# Verify unique directory path exists. If not, create it.
-if [[ -d "$UNIQUEDIR" ]]
+# Verify orphan directory path exists. If not, create it.
+if [[ -d "$ORPHANDIR" ]]
 then
     echo "The path you inputted is valid."
 else
     echo "The path you inputted does not exist. Creating directory on your behalf..."
-    mkdir $UNIQUEDIR
+    mkdir $ORPHANDIR
 fi
 
-# Check camera directory for unique files. Copy them to the unique directory.
+# Check camera directory for orphan files. Copy them to the orphan directory.
 for f in $FILESDIR/*.jpg; do
-  [ ! -e "${f%.*}.rw2" ] && cp -- "$f" $UNIQUEDIR
+  [ ! -e "${f%.*}.rw2" ] && cp -- "$f" $ORPHANDIR
 done
 
-# Count files in unique directory.
-UNIQUECOUNT=$(ls -1q "$UNIQUEDIR" | awk 'END{print NR}')
+# Count files in orphan directory.
+ORPHANCOUNT=$(ls -1q "$ORPHANDIR" | awk 'END{print NR}')
 
-if [ $UNIQUECOUNT -ne 0 ]; then
-        echo "Success! There were $UNIQUECOUNT unique files detected. They have been copied to $UNIQUEDIR."
+if [ $ORPHANCOUNT -ne 0 ]; then
+        echo "Success! There were $ORPHANCOUNT orphan files detected. They have been copied to $ORPHANDIR."
 else
-        echo "There were no unique files detected."
+        echo "There were no orphan files detected."
 fi
