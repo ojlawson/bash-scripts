@@ -26,7 +26,7 @@ else
     mkdir $ORPHANDIR
 fi
 
-# Check camera directory for orphan files. Copy them to the orphan directory.
+# Check camera directory for orphan files. Copy them to orphan directory.
 for f in $FILESDIR/*.jpg; do
   [ ! -e "${f%.*}.rw2" ] && cp -- "$f" $ORPHANDIR
 done
