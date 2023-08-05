@@ -31,6 +31,10 @@ for f in $FILESDIR/*.jpg; do
   [ ! -e "${f%.*}.rw2" ] && cp -- "$f" $ORPHANDIR
 done
 
+for f in $FILESDIR/*.rw2; do
+  [ ! -e "${f%.*}.jpg" ] && cp -- "$f" $ORPHANDIR
+done
+
 # Count files in orphan directory.
 ORPHANCOUNT=$(ls -1q "$ORPHANDIR" | awk 'END{print NR}')
 
