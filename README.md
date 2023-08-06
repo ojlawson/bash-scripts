@@ -55,7 +55,7 @@ Where would you like the orphan files to be stored? Please input the path:
 
 ```bash
 # Download the script
-curl -o orphan-file-finder.sh https://github.com/ojlawson/bash-scripts/orphan-file-finder.sh
+curl -o orphan-file-finder.sh https://raw.githubusercontent.com/ojlawson/orphan-file-finder/main/orphan-file-finder.sh
 
 # Make the script executable
 chmod +x orphan-file-finder.sh
