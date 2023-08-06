@@ -31,8 +31,8 @@ for f in $FILESDIR/*.JPG; do
   [ ! -e "${f%.*}.RW2" ] && cp -- "$f" $ORPHANDIR
 done
 
-for f in $FILESDIR/*.rw2; do
-  [ ! -e "${f%.*}.jpg" ] && cp -- "$f" $ORPHANDIR
+for f in $FILESDIR/*.RW2; do
+  [ ! -e "${f%.*}.JPG" ] && cp -- "$f" $ORPHANDIR
 done
 
 # Count files in orphan directory.
