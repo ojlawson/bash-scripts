@@ -27,8 +27,8 @@ else
 fi
 
 # Check camera directory for orphan files. Copy them to orphan directory.
-for f in $FILESDIR/*.jpg; do
-  [ ! -e "${f%.*}.rw2" ] && cp -- "$f" $ORPHANDIR
+for f in $FILESDIR/*.JPG; do
+  [ ! -e "${f%.*}.RW2" ] && cp -- "$f" $ORPHANDIR
 done
 
 for f in $FILESDIR/*.rw2; do
