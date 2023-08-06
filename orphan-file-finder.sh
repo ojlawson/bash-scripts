@@ -7,9 +7,9 @@ eval FILESDIR=$FILESDIR
 # Verify camera directory path exists. If not, exit script.
 if [[ -d "$FILESDIR" ]]
 then
-    echo "The path you inputted is valid."
+    echo "The path is valid."
 else
-    echo "The path you inputted does not exist."
+    echo "The path does not exist."
     exit 2
 fi
 
@@ -20,9 +20,9 @@ eval ORPHANDIR=$ORPHANDIR
 # Verify orphan directory path exists. If not, create it.
 if [[ -d "$ORPHANDIR" ]]
 then
-    echo "The path you inputted is valid."
+    echo "The path is valid."
 else
-    echo "The path you inputted does not exist. Creating directory on your behalf..."
+    echo "The path does not exist. Creating directory on your behalf..."
     mkdir $ORPHANDIR
 fi
 
