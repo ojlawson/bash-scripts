@@ -12,18 +12,18 @@ Scans a directory to find orphan files and copies them to a folder.
 
 ## Description
 
-When taking photos on my camera, I typically set the file format to "RAW+JPG". This will take photos in both RAW format (.rw2) and JPG format (.JPG). For example:
+When taking photos on my camera, I typically set the file format to "RAW+JPG". This will take photos in both RAW (.rw2) and JPG (.JPG) formats. For example:
 
 - Image1.JPG
 - Image1.RW2
 - Image2.JPG
 - Image2.RW2
 
-RAW files provide far more image information, allowing me to capture more detail and greater dynamic range from my camera sensor. They also provide much more flexibility when editing the photos. The downside of this is that the files are much larger in size. RAW files on my camera are typically 24MB+, whereas the JPG files are are typically 8-10MB.
+RAW files provide far more image information, allowing me to capture more detail and greater dynamic range from my camera sensor. They also provide much more flexibility when editing the photos. The downside of this is the files are much larger in size. RAW files on my camera are typically 24MB+, whereas the JPG files are are typically 8-10MB.
 
 Taking photos in both RAW + JPG allows me to share JPGs more easily (smaller, more compatible) whilst still giving me the option to edit those same photos in their RAW format. 
 
-Sometimes, I will set the camera to only take photos in JPG format. There are number of reasons for doing this. For example, conserving space on my SD card, taking photos which I know I won't edit, misclicks when configuring other settings. There are also times where I will set the camera to only take photos in RAW format. For example, I'm taking photos on my own and have no intention of sharing them before editing them.
+Sometimes, I will set the camera to only take photos in JPG format. There are a number of reasons for doing this. For example, conserving space on my SD card, or taking photos which I know I won't edit. There are also times where I will set the camera to only take photos in RAW format. For example, when I'm taking photos on my own and have no intention of sharing them before editing them.
 
 In the previous example, there was a corresponding RW2 file for each JPG.  This issue that arises when switching between file format modes is the emergence of "orphan" files. For example:
 
@@ -37,11 +37,9 @@ In the previous example, there was a corresponding RW2 file for each JPG.  This 
 
 The orphan files here are: "Image2.JPG", "Image4.JPG" and "Image5.JPG".
 
-Orphan files make the file management much harder. I can no longer delete all JPGs or delete all RW2 files and just keep the one format. This would put me at risk of losing images. This wouldn't too big of an issue if you are dealing with a small number of files, since you could manually identify the orphan files. However, I recently had to manage 5078 photos (98GB). Hence, I decided to develop a bash script to identify the orphan files and move them to a separate folder.  
+Orphan files make file management much harder. I can no longer delete all JPGs or delete all RW2 files and just keep the one format. This would put me at risk of losing images. This wouldn't be too big of an issue if I was dealing with a small number of files, since I could manually identify the orphan files. However, I recently had to manage 5078 photo files (98GB). Hence, I decided to develop a bash script to identify the orphan files and move them to a separate folder.  
 
 ## Usage
-
-For the first prompt, the directory must exist.
 
 For the second prompt, the directory doesn't need to exist. If you input a non-existent directory, the script will create the directory for you.
 
@@ -64,7 +62,7 @@ chmod +x orphan-file-finder.sh
 ## Example
 
 ```bash
-./7_input_verify_find_count_output.sh
+./orphan-file-finder.sh
 
 Where are the camera files located? Please input the path: /Users/oliver/camera-photos/
 The path is valid.
